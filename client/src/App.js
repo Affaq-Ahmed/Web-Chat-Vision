@@ -17,6 +17,7 @@ const App = () => {
 			<AppBar
 				position="static"
 				color="inherit"
+				width={{ xs: "90%", sm: "100%" }}
 				style={{
 					borderRadius: 15,
 					margin: "30px 100px",
@@ -24,12 +25,12 @@ const App = () => {
 					flexDirection: "row",
 					justifyContent: "center",
 					alignItems: "center",
-					width: "600px",
+					width: "400px",
 					border: "2px solid black",
 				}}
 			>
 				<Typography variant="h2" align="center">
-					Web Chat Vision
+					Web Vision
 				</Typography>
 			</AppBar>
 			<VideoPlayer />
