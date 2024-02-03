@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { SocketContext } from "../SocketContext";
 import { Grid, Paper, Typography } from "@mui/material";
+import "./videostyles.css";
 
 const VideoPlayer = () => {
-	const { name, myVideo, userVideo, callAccepted, callEnded, stream, call } =
+	const { name, myVideo, partnerVideo, callAccepted, callEnded, call } =
 		useContext(SocketContext);
 
 	return (
@@ -25,13 +26,7 @@ const VideoPlayer = () => {
 					<Typography variant="h5" gutterBottom>
 						{name || "Your Name"}
 					</Typography>
-					<video
-						playsInline
-						muted
-						ref={myVideo}
-						autoPlay
-						style={{ width: "300px" }}
-					/>
+					<video playsInline muted ref={myVideo} autoPlay className="video" />
 				</Grid>
 			</Paper>
 
@@ -47,12 +42,7 @@ const VideoPlayer = () => {
 						<Typography variant="h5" gutterBottom>
 							{call.name || "Caller Name"}
 						</Typography>
-						<video
-							playsInline
-							ref={userVideo}
-							autoPlay
-							style={{ width: "500px" }}
-						/>
+						<video playsInline ref={partnerVideo} autoPlay className="video" />
 					</Grid>
 				</Paper>
 			) : null}
